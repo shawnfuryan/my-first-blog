@@ -8,25 +8,12 @@
     <h1><a href=""></a></h1>
   </div>
 
-  <div>
-    <p>Published: 2015 August 03</p>
-    <h2><a href="">無邀正正之旗</a></h2>
-    <p>
-       無邀正正之旗，勿擊堂堂之陣，此治變者也；
-       故用兵之法，高陵勿向
-    </p>
-  </div>
-
-  <div>
-    <p>Published: 2015 August 03</p>
-    <h2><a href="">故三軍可奪氣</a></h2>
-    <p>
-      故三軍可奪氣，將軍可奪心。是故朝氣銳，晝氣惰，
-      暮氣歸；故善用兵者，避其銳氣，擊其惰歸，
-      此治氣者也。以治待亂，以靜待譁，此治心者也。
-      以近待遠，以佚待勞，以飽待飢，此治力者也
-    </p>
-
-  </div>
+  {% for post in posts %}
+    <div>
+      <p>Published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaks }}</p>
+    </div>
+  {% endfor %}
 </body>
 </html>
